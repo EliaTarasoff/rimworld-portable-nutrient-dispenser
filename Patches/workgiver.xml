@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Add the portable NPD to my WorkGiverDef, so pawns can use it, and so I don't need to copy-paste the def.
+-->
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsEtDispenseNutrientPaste"]/fixedBillGiverDefs</xpath>
+        <value>
+            <li>PortableNutrientDispenser</li>
+        </value>
+    </Operation>
+</Patch>

@@ -50,21 +50,4 @@
         <interactionCellIcon>Stool</interactionCellIcon>
         <surfaceType>Item</surfaceType>
     </ThingDef>
-
-    <WorkGiverDef>
-        <defName>DoBillsPortableNutirentDispenser</defName>
-        <label>dispense nutrients</label>
-        <giverClass>WorkGiver_DoBill</giverClass>
-        <workType>Cooking</workType>
-        <priorityInType>95</priorityInType>
-        <fixedBillGiverDefs>
-            <li>PortableNutrientDispenser</li>
-        </fixedBillGiverDefs>
-        <verb>dispense</verb>
-        <gerund>dispensing at</gerund>
-        <requiredCapacities>
-            <li>Manipulation</li>
-        </requiredCapacities>
-        <prioritizeSustains>true</prioritizeSustains>
-    </WorkGiverDef>
 </Defs>
