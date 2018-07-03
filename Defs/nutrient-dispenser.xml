@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Name="PortableNutrientDispenser" ParentName="BenchBase">
+        <defName>PortableNutrientDispenser</defName>
+        <label>portable nutrient dispenser</label>
+        <description>This is a portable nutrient-dispenser. It converts raw foodstuffs into the exact same paste you know and love. What a wonderous joy, that a hyper-advanced AI chose to miniturize the standard dispencer, while keeping the exact taste, texture, and smell of the original product intact!</description>
+
+        <!--Visuals-->
+        <graphicData>
+            <texPath>Things/Building/Production/NutrientDispenser</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <color>(232,255,191)</color>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <castEdgeShadows>false</castEdgeShadows>
+        <staticSunShadowHeight>0</staticSunShadowHeight>
+        <altitudeLayer>Building</altitudeLayer> <!--I think this affects what gets drawn on top or underneath.-->
+
+        <!--Construction costs, prereqs, etc-->
+        <statBases>
+            <Mass>3</Mass>
+            <MarketValue>200</MarketValue>
+        </statBases>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <researchPrerequisites>
+            <li>NutrientPaste</li>
+        </researchPrerequisites>
+
+        <!--How it functions-->
+        <useHitPoints>False</useHitPoints>
+        <thingClass>Building_WorkTable</thingClass>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <recipes>
+            <li>MakeNutrientPaste</li>
+            <li>MakeNutrientBrick</li>
+        </recipes>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <isMealSource>true</isMealSource>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <fillPercent>0.5</fillPercent>
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(0,0,1)</interactionCellOffset>
+        <interactionCellIcon>Stool</interactionCellIcon>
+        <surfaceType>Item</surfaceType>
+    </ThingDef>
+
+    <WorkGiverDef>
+        <defName>DoBillsPortableNutirentDispenser</defName>
+        <label>dispense nutrients</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>Cooking</workType>
+        <priorityInType>95</priorityInType>
+        <fixedBillGiverDefs>
+            <li>PortableNutrientDispenser</li>
+        </fixedBillGiverDefs>
+        <verb>dispense</verb>
+        <gerund>dispensing at</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+</Defs>
