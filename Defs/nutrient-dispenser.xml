@@ -49,5 +49,8 @@
         <interactionCellOffset>(0,0,1)</interactionCellOffset>
         <interactionCellIcon>Stool</interactionCellIcon>
         <surfaceType>Item</surfaceType>
+        <thingSetMakerTags>
+            <li>RewardSpecial</li>
+        </thingSetMakerTags>
     </ThingDef>
 </Defs>
