@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef Name="PortableNutrientDispenser" ParentName="BenchBase">
+    <ThingDef Name="PortableNutrientDispenser" ParentName="BuildingBase">
         <defName>PortableNutrientDispenser</defName>
         <label>portable nutrient dispenser</label>
-        <description>This is a portable nutrient-dispenser. It converts raw foodstuffs into the exact same paste you know and love. What a wonderous joy, that a hyper-advanced AI chose to miniturize the standard dispencer, while keeping the exact taste, texture, and smell of the original product intact!</description>
+        <description>This is a portable nutrient-dispenser. It converts raw foodstuffs into the exact same meals you know and love. What a wonderous joy, that a hyper-advanced AI chose to miniaturize the standard dispenser, while keeping the exact taste, texture, and smell of the original product intact!</description>
 
         <!--Visuals-->
         <graphicData>
@@ -21,14 +21,19 @@
         <!--Construction costs, prereqs, etc-->
         <statBases>
             <Mass>3</Mass>
-            <MarketValue>200</MarketValue>
+            <MarketValue>3000</MarketValue>
         </statBases>
+        <canOverlapZones>false</canOverlapZones>
         <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
         <researchPrerequisites>
             <li>NutrientPaste</li>
         </researchPrerequisites>
 
         <!--How it functions-->
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsProduction</li>
+        </thingCategories>
         <useHitPoints>False</useHitPoints>
         <thingClass>Building_WorkTable</thingClass>
         <passability>PassThroughOnly</passability>
@@ -43,8 +48,9 @@
         <building>
             <isMealSource>true</isMealSource>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <deconstructible>false</deconstructible>
         </building>
-        <fillPercent>0.5</fillPercent>
+        <fillPercent>0.1</fillPercent> <!--percent cover effectiveness in combat-->
         <hasInteractionCell>true</hasInteractionCell>
         <interactionCellOffset>(0,0,1)</interactionCellOffset>
         <interactionCellIcon>Stool</interactionCellIcon>
